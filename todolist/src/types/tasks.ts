@@ -3,6 +3,9 @@ import type { TaskStatus } from "./state";
 export interface Task {
     id: string;
     title: string;
-    description: string;
-    status:TaskStatus
+    status: TaskStatus;
+    elapsedSeconds: number;
+    isRunning: boolean;
+    isDeleting: boolean;
+    isNew: boolean;
 };
