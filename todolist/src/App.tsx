@@ -1,6 +1,7 @@
 import { useTask } from "./hooks/taskState";
 import { ControllerInput } from "./components/ui/ControllerInput";
-import { useMemo, useState } from "react";
+import { useState } from "react";
+import { useTaskCounters } from "./hooks/useCounter";
 import type { TaskStatus } from "./types/state";
 import "./App.css";
 
@@ -32,13 +33,8 @@ function getStatusLabel(status: TaskStatus) {
 function App() {
   const { task, addTask, removeTask, startTask, stopTask, setStatus } = useTask();
   const [title, setTitle] = useState("");
-
-  const counters = useMemo(() => {
-    const pending = task.filter(item => item.status === "pending").length;
-    const inProgress = task.filter(item => item.status === "in-progress").length;
-    const done = task.filter(item => item.status === "done").length;
-    return { pending, inProgress, done };
-  }, [task]);
+  
+  const counters = useTaskCounters(task)
 
   function handleAddTask() {
     const cleanTitle = title.trim();
