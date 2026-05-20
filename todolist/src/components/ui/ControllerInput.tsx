@@ -1,13 +1,7 @@
 import { type FormEvent } from "react";
 import type { ControllerInputProps } from "../../types/input";
 
-export function ControllerInput({
-  value,
-  placeholder = "Nueva tarea…",
-  submitText = "Agregar",
-  onChange,
-  onSubmit,
-}: ControllerInputProps) {
+export function ControllerInput({ value,placeholder = "Nueva tarea…",submitText = "Agregar",onChange,onSubmit,}: ControllerInputProps) {
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
     onSubmit();
