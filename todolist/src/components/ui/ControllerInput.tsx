@@ -28,7 +28,7 @@ export function ControllerInput({
         placeholder={placeholder}
         onChange={event => onChange(event.target.value)}
       />
-      <button className="taskButton" type="submit" disabled={!value.trim()}>
+      <button className="taskButton taskButton--primary" type="submit" disabled={!value.trim()}>
         {submitText}
       </button>
     </form>
