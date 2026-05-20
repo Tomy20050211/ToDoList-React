@@ -1,12 +1,5 @@
 import { type FormEvent } from "react";
-
-type ControllerInputProps = {
-  value: string;
-  placeholder?: string;
-  submitText?: string;
-  onChange: (nextValue: string) => void;
-  onSubmit: () => void;
-};
+import type { ControllerInputProps } from "../../types/input";
 
 export function ControllerInput({
   value,
